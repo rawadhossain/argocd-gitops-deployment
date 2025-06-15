@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: next-app
-    image: nginx
+    image: rawadhossain/todo-app
     ports:
     - containerPort: 80
