@@ -12,39 +12,39 @@
 
 ## Here's What Happens Step by Step:
 ```
-                      ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-                      │   Your Code     │    │   Docker Hub     │    │   GitOps Repo   │
-                      │   Repository    │    │                  │    │                 │
-                      │                 │    │                  │    │   manifest.yml  │
-                      └─────────────────┘    └──────────────────┘    └─────────────────┘
-                               │                       │                       │
-                               │ 1. Push to main       │                       │
-                               ▼                       │                       │
-                      ┌─────────────────┐              │                       │
-                      │ GitHub Actions  │              │                       │
-                      │ Workflow Runs   │              │                       │
-                      └─────────────────┘              │                       │
-                               │                       │                       │
-                               │ 2. Build & Push       │                       │
-                               └──────────────────────►│                       │
-                                                       │                       │
-                               ┌───────────────────────┘                       │
-                               │ 3. Update manifest                            │
-                               └──────────────────────────────────────────────►│
-                                                                               │
-                                                                               ▼
-                                                                      ┌─────────────────┐
-                                                                      │   ArgoCD        │
-                                                                      │   Detects       │
-                                                                      │   Changes       │
-                                                                      └─────────────────┘
-                                                                               │
-                                                                               ▼
-                                                                      ┌─────────────────┐
-                                                                      │   Kubernetes    │
-                                                                      │  Cluster/docker │
-                                                                      │   (Deployment)  │
-                                                                      └─────────────────┘
+    ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+    │   Your Code     │    │   Docker Hub     │    │   GitOps Repo   │
+    │   Repository    │    │                  │    │                 │
+    │                 │    │                  │    │   manifest.yml  │
+    └─────────────────┘    └──────────────────┘    └─────────────────┘
+             │                       │                       │
+             │ 1. Push to main       │                       │
+             ▼                       │                       │
+    ┌─────────────────┐              │                       │
+    │ GitHub Actions  │              │                       │
+    │ Workflow Runs   │              │                       │
+    └─────────────────┘              │                       │
+             │                       │                       │
+             │ 2. Build & Push       │                       │
+             └──────────────────────►│                       │
+                                     │                       │
+             ┌───────────────────────┘                       │
+             │ 3. Update manifest                            │
+             └──────────────────────────────────────────────►│
+                                                             │
+                                                             ▼
+                                                    ┌─────────────────┐
+                                                    │   ArgoCD        │
+                                                    │   Detects       │
+                                                    │   Changes       │
+                                                    └─────────────────┘
+                                                             │
+                                                             ▼
+                                                    ┌─────────────────┐
+                                                    │   Kubernetes    │
+                                                    │ Cluster/docker  │
+                                                    │   (Deployment)  │
+                                                    └─────────────────┘
 ```
 ## What Your Workflow Does:
 ### Step 1: Build & Push Docker Image
@@ -69,3 +69,7 @@
     * Pulls the new Docker image from Docker Hub
     * Updates your Kubernetes deployment
     * Your application gets updated with the new code!
+
+## Finally pushed to dockerhub 
+![image](https://github.com/user-attachments/assets/8a1eaab0-6fdb-4f90-8c6e-ff12812aaf6e)
+
