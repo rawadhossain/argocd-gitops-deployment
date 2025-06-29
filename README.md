@@ -1,6 +1,6 @@
 # GitOps workflow
 ## The GitOps Flow that's been Created:
-### 1. Source Code Repository (next-app-Gitops) --workflow runs here
+### 1. Source Code Repository [next-app-Gitops](https://github.com/rawadhossain/next-app-Gitops/blob/main/.github/workflows/docker-build.yml) --workflow runs here
 * Contains your application code (nextjs code)
 * Contains the GitHub Actions workflow
 * When you push code to main branch → triggers the workflow
