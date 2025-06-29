@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: next-app
-    image: rawadhossain/todo-app
+    image: 100xdevs/todo-app-week-39:54d61a156a8b5e0ce9b5e779e5ac529550fc4ce3
     ports:
     - containerPort: 80
